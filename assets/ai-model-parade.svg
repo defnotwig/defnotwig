@@ -1,153 +1,199 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 110" width="900" height="110">
   <style>
-    /* Bounce animation: vertical oscillation simulating walking/marching */
-    @keyframes bounce {
+    /* Continuous slow rotation for OpenAI spiral */
+    @keyframes rotate-slow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    /* Gentle floating for Claude cloud */
+    @keyframes float-cloud {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
+      50% { transform: translateY(-5px); }
     }
-    /* Data-dot pulse: fading dots between bots suggest data flowing between models */
-    @keyframes pulse {
-      0%, 100% { opacity: 0.2; }
-      50% { opacity: 0.8; }
+    /* Dual star orbit dance for Gemini */
+    @keyframes orbit-star-1 {
+      0% { transform: translate(0px, 0px); }
+      50% { transform: translate(6px, -4px); }
+      100% { transform: translate(0px, 0px); }
     }
-    /* Each bot class has increasing delay (0.13s apart) for a cascading wave effect */
-    .b1 { animation: bounce 0.8s ease-in-out infinite; }
-    .b2 { animation: bounce 0.8s ease-in-out 0.13s infinite; }
-    .b3 { animation: bounce 0.8s ease-in-out 0.26s infinite; }
-    .b4 { animation: bounce 0.8s ease-in-out 0.39s infinite; }
-    .b5 { animation: bounce 0.8s ease-in-out 0.52s infinite; }
-    .b6 { animation: bounce 0.8s ease-in-out 0.65s infinite; }
-    .dot { animation: pulse 2s ease-in-out infinite; }
+    @keyframes orbit-star-2 {
+      0% { transform: translate(0px, 0px); }
+      50% { transform: translate(-6px, 4px); }
+      100% { transform: translate(0px, 0px); }
+    }
+    /* Ollama llama ear twitch and hop behavior */
+    @keyframes llama-behavior {
+      0%, 100% { transform: translateY(0); }
+      40% { transform: translateY(0); }
+      43% { transform: translateY(-4px); }
+      46% { transform: translateY(0); }
+      49% { transform: translateY(-2px); }
+      52% { transform: translateY(0); }
+    }
+    /* OpenRouter hub pulse and packet emissions */
+    @keyframes hub-pulse {
+      0%, 100% { opacity: 0.85; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.04); }
+    }
+    @keyframes packet-left {
+      0% { transform: translate(0px, 0px); opacity: 0; }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.8; }
+      100% { transform: translate(-65px, 8px); opacity: 0; }
+    }
+    @keyframes packet-right {
+      0% { transform: translate(0px, 0px); opacity: 0; }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.8; }
+      100% { transform: translate(65px, -4px); opacity: 0; }
+    }
+    /* Codex jetpack hover and flame flicker */
+    @keyframes jetpack-hover {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    @keyframes flame-flicker {
+      0%, 100% { transform: scaleY(1); opacity: 0.8; }
+      50% { transform: scaleY(0.5) scaleX(0.85); opacity: 1; }
+    }
+
+    /* Assigning animations to classes */
+    .op-spiral { animation: rotate-slow 10s linear infinite; transform-origin: 100px 45px; }
+    .cl-cloud { animation: float-cloud 3.5s ease-in-out infinite; }
+    .gem-star1 { animation: orbit-star-1 4s ease-in-out infinite; }
+    .gem-star2 { animation: orbit-star-2 4s ease-in-out infinite; }
+    .ol-llama { animation: llama-behavior 7s ease-in-out infinite; }
+    .or-hub { animation: hub-pulse 2.5s ease-in-out infinite; transform-origin: 660px 46px; }
+    .or-packet1 { animation: packet-left 2s linear infinite; }
+    .or-packet2 { animation: packet-right 1.8s linear infinite; }
+    .cx-pilot { animation: jetpack-hover 3s ease-in-out infinite; }
+    .cx-flame { animation: flame-flicker 0.12s steps(4) infinite; transform-origin: 789px 54px; }
+
     .lbl { font-family: 'Courier New', Courier, monospace; font-size: 10px; font-weight: bold; }
+    .ground-decor { fill: #1f2937; opacity: 0.3; }
   </style>
 
   <!-- Background -->
   <rect width="900" height="110" fill="#0d1117" rx="8"/>
 
   <!-- Section title -->
-  <text x="450" y="14" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#484f58" letter-spacing="3">AI MODEL PARADE</text>
+  <text x="450" y="14" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#484f58" letter-spacing="3">AI MODEL PLAYGROUND</text>
 
-  <!-- Ground line: dashed line the bots "walk" on -->
+  <!-- Ground line -->
   <line x1="30" y1="76" x2="870" y2="76" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
 
-  <!-- Data flow dots: pulsing circles between bots suggest inter-model communication -->
-  <circle class="dot" cx="150" cy="74" r="2" fill="#00f0ff"/>
-  <circle class="dot" cx="300" cy="74" r="2" fill="#bf5fff" style="animation-delay: 0.5s"/>
-  <circle class="dot" cx="450" cy="74" r="2" fill="#58a6ff" style="animation-delay: 1s"/>
-  <circle class="dot" cx="600" cy="74" r="2" fill="#00f0ff" style="animation-delay: 1.5s"/>
-  <circle class="dot" cx="750" cy="74" r="2" fill="#bf5fff" style="animation-delay: 2s"/>
-
-  <!-- ═══ BOT 1: OpenAI (cx=75, green #10a37f) ═══ -->
-  <!-- Design: single antenna with ball tip, rectangular head, chest plate detail -->
-  <g class="b1">
-    <rect x="73" y="28" width="4" height="8" fill="#10a37f"/>
-    <rect x="71" y="26" width="8" height="4" rx="2" fill="#15c498"/>
-    <rect x="61" y="36" width="28" height="16" rx="2" fill="#10a37f"/>
-    <rect x="66" y="41" width="6" height="5" rx="1" fill="#b0ffe0"/>
-    <rect x="78" y="41" width="6" height="5" rx="1" fill="#b0ffe0"/>
-    <rect x="69" y="43" width="3" height="3" fill="#0d1117"/>
-    <rect x="80" y="43" width="3" height="3" fill="#0d1117"/>
-    <rect x="65" y="52" width="20" height="10" fill="#0d8c6b"/>
-    <rect x="71" y="55" width="8" height="4" rx="1" fill="#10a37f"/>
-    <rect x="67" y="62" width="6" height="10" fill="#10a37f"/>
-    <rect x="77" y="62" width="6" height="10" fill="#10a37f"/>
-    <rect x="65" y="70" width="8" height="4" rx="1" fill="#0d8c6b"/>
-    <rect x="77" y="70" width="8" height="4" rx="1" fill="#0d8c6b"/>
+  <!-- Ground Scenery elements (grass/rocks in pixel art style) -->
+  <g class="ground-decor">
+    <rect x="180" y="74" width="4" height="2"/>
+    <rect x="320" y="74" width="6" height="2"/>
+    <rect x="322" y="72" width="2" height="2"/>
+    <rect x="480" y="74" width="8" height="2"/>
+    <rect x="600" y="74" width="4" height="2"/>
+    <rect x="740" y="74" width="6" height="2"/>
+    <rect x="742" y="72" width="2" height="2"/>
   </g>
-  <text class="lbl" x="75" y="92" text-anchor="middle" fill="#10a37f">OpenAI</text>
 
-  <!-- ═══ BOT 2: Claude (cx=225, coral #d97757) ═══ -->
-  <!-- Design: rounded ears, warm color, friendly silhouette -->
-  <g class="b2">
-    <rect x="215" y="30" width="6" height="6" rx="3" fill="#d97757"/>
-    <rect x="229" y="30" width="6" height="6" rx="3" fill="#d97757"/>
-    <rect x="211" y="36" width="28" height="16" rx="3" fill="#d97757"/>
-    <rect x="216" y="41" width="6" height="5" rx="1" fill="#ffd4c4"/>
-    <rect x="228" y="41" width="6" height="5" rx="1" fill="#ffd4c4"/>
-    <rect x="219" y="43" width="3" height="3" fill="#0d1117"/>
-    <rect x="230" y="43" width="3" height="3" fill="#0d1117"/>
-    <rect x="215" y="52" width="20" height="10" fill="#b85f3e"/>
-    <rect x="217" y="62" width="6" height="10" fill="#d97757"/>
-    <rect x="227" y="62" width="6" height="10" fill="#d97757"/>
-    <rect x="215" y="70" width="8" height="4" rx="1" fill="#b85f3e"/>
-    <rect x="227" y="70" width="8" height="4" rx="1" fill="#b85f3e"/>
+  <!-- ═══ 1: OpenAI (cx=100, cy=45) ═══ -->
+  <!-- Design: Custom rotating pixel-art spiral in green -->
+  <g class="op-spiral">
+    <rect x="98" y="43" width="4" height="4" fill="#10a37f" />
+    <rect x="102" y="39" width="4" height="4" fill="#10a37f" />
+    <rect x="104" y="43" width="4" height="4" fill="#10a37f" />
+    <rect x="102" y="47" width="4" height="4" fill="#10a37f" />
+    <rect x="98" y="49" width="4" height="4" fill="#10a37f" />
+    <rect x="94" y="47" width="4" height="4" fill="#10a37f" />
+    <rect x="92" y="43" width="4" height="4" fill="#10a37f" />
+    <rect x="94" y="39" width="4" height="4" fill="#10a37f" />
+    <rect x="98" y="37" width="4" height="4" fill="#10a37f" />
+    <rect x="106" y="35" width="4" height="4" fill="#15c498" />
+    <rect x="110" y="41" width="4" height="4" fill="#15c498" />
+    <rect x="106" y="51" width="4" height="4" fill="#15c498" />
+    <rect x="96" y="53" width="4" height="4" fill="#15c498" />
+    <rect x="88" y="49" width="4" height="4" fill="#15c498" />
+    <rect x="84" y="39" width="4" height="4" fill="#15c498" />
+    <rect x="90" y="31" width="4" height="4" fill="#15c498" />
+    <rect x="100" y="29" width="4" height="4" fill="#15c498" />
   </g>
-  <text class="lbl" x="225" y="92" text-anchor="middle" fill="#d97757">Claude</text>
+  <text class="lbl" x="100" y="92" text-anchor="middle" fill="#10a37f">OpenAI</text>
 
-  <!-- ═══ BOT 3: Gemini (cx=375, blue #4285f4) ═══ -->
-  <!-- Design: twin antennae with ball tips — "Gemini" = twins -->
-  <g class="b3">
-    <rect x="368" y="26" width="4" height="10" fill="#4285f4"/>
-    <rect x="378" y="26" width="4" height="10" fill="#4285f4"/>
-    <rect x="366" y="24" width="8" height="4" rx="2" fill="#669df7"/>
-    <rect x="376" y="24" width="8" height="4" rx="2" fill="#669df7"/>
-    <rect x="361" y="36" width="28" height="16" rx="2" fill="#4285f4"/>
-    <rect x="366" y="41" width="6" height="5" rx="1" fill="#b4d0ff"/>
-    <rect x="378" y="41" width="6" height="5" rx="1" fill="#b4d0ff"/>
-    <rect x="369" y="43" width="3" height="3" fill="#0d1117"/>
-    <rect x="380" y="43" width="3" height="3" fill="#0d1117"/>
-    <rect x="365" y="52" width="20" height="10" fill="#2d6cd4"/>
-    <rect x="367" y="62" width="6" height="10" fill="#4285f4"/>
-    <rect x="377" y="62" width="6" height="10" fill="#4285f4"/>
-    <rect x="365" y="70" width="8" height="4" rx="1" fill="#2d6cd4"/>
-    <rect x="377" y="70" width="8" height="4" rx="1" fill="#2d6cd4"/>
+  <!-- ═══ 2: Claude (cx=240, cy=46) ═══ -->
+  <!-- Design: Puffy coral cloud-spirit floating gently -->
+  <g class="cl-cloud">
+    <rect x="226" y="42" width="28" height="12" rx="4" fill="#d97757" />
+    <rect x="230" y="36" width="20" height="18" rx="4" fill="#d97757" />
+    <rect x="222" y="46" width="8" height="6" rx="2" fill="#d97757" />
+    <rect x="250" y="46" width="8" height="6" rx="2" fill="#d97757" />
+    <rect x="232" y="38" width="12" height="2" fill="#ffd4c4" opacity="0.4" />
+    <rect x="224" y="44" width="4" height="2" fill="#ffd4c4" opacity="0.4" />
+    <rect x="234" y="46" width="2" height="2" fill="#0d1117" />
+    <rect x="244" y="46" width="2" height="2" fill="#0d1117" />
+    <path d="M 237 51 L 240 52 L 243 51" stroke="#0d1117" stroke-width="1" fill="none" />
   </g>
-  <text class="lbl" x="375" y="92" text-anchor="middle" fill="#4285f4">Gemini</text>
+  <text class="lbl" x="240" y="92" text-anchor="middle" fill="#d97757">Claude</text>
 
-  <!-- ═══ BOT 4: Ollama (cx=525, white/gray #e0e0e0) ═══ -->
-  <!-- Design: tall pointed ears — llama reference; inverted eye colors (dark on light) -->
-  <g class="b4">
-    <rect x="515" y="24" width="5" height="12" fill="#e0e0e0"/>
-    <rect x="530" y="24" width="5" height="12" fill="#e0e0e0"/>
-    <rect x="511" y="36" width="28" height="16" rx="2" fill="#e0e0e0"/>
-    <rect x="516" y="41" width="6" height="5" rx="1" fill="#505050"/>
-    <rect x="528" y="41" width="6" height="5" rx="1" fill="#505050"/>
-    <rect x="518" y="42" width="3" height="3" fill="#ffffff"/>
-    <rect x="530" y="42" width="3" height="3" fill="#ffffff"/>
-    <rect x="515" y="52" width="20" height="10" fill="#b0b0b0"/>
-    <rect x="517" y="62" width="6" height="10" fill="#e0e0e0"/>
-    <rect x="527" y="62" width="6" height="10" fill="#e0e0e0"/>
-    <rect x="515" y="70" width="8" height="4" rx="1" fill="#b0b0b0"/>
-    <rect x="527" y="70" width="8" height="4" rx="1" fill="#b0b0b0"/>
+  <!-- ═══ 3: Gemini (cx=380, cy=46) ═══ -->
+  <!-- Design: Dual glowing sparks orbiting each other -->
+  <g>
+    <g class="gem-star1">
+      <rect x="378" y="34" width="4" height="12" fill="#4285f4" />
+      <rect x="374" y="38" width="12" height="4" fill="#4285f4" />
+      <rect x="378" y="38" width="4" height="4" fill="#e8f0fe" />
+    </g>
+    <g class="gem-star2">
+      <rect x="386" y="48" width="2" height="8" fill="#bf5fff" />
+      <rect x="383" y="51" width="8" height="2" fill="#bf5fff" />
+      <rect x="386" y="51" width="2" height="2" fill="#f3e8ff" />
+    </g>
   </g>
-  <text class="lbl" x="525" y="92" text-anchor="middle" fill="#e0e0e0">Ollama</text>
+  <text class="lbl" x="380" y="92" text-anchor="middle" fill="#4285f4">Gemini</text>
 
-  <!-- ═══ BOT 5: OpenRouter (cx=675, purple #8b5cf6) ═══ -->
-  <!-- Design: arrow/router-shaped hat with cross-bar — routing metaphor -->
-  <g class="b5">
-    <rect x="673" y="26" width="4" height="10" fill="#8b5cf6"/>
-    <rect x="669" y="28" width="12" height="4" fill="#8b5cf6"/>
-    <rect x="671" y="24" width="8" height="4" rx="1" fill="#a78bfa"/>
-    <rect x="661" y="36" width="28" height="16" rx="2" fill="#8b5cf6"/>
-    <rect x="666" y="41" width="6" height="5" rx="1" fill="#d4bcff"/>
-    <rect x="678" y="41" width="6" height="5" rx="1" fill="#d4bcff"/>
-    <rect x="669" y="43" width="3" height="3" fill="#0d1117"/>
-    <rect x="680" y="43" width="3" height="3" fill="#0d1117"/>
-    <rect x="665" y="52" width="20" height="10" fill="#6d3fd4"/>
-    <rect x="667" y="62" width="6" height="10" fill="#8b5cf6"/>
-    <rect x="677" y="62" width="6" height="10" fill="#8b5cf6"/>
-    <rect x="665" y="70" width="8" height="4" rx="1" fill="#6d3fd4"/>
-    <rect x="677" y="70" width="8" height="4" rx="1" fill="#6d3fd4"/>
+  <!-- ═══ 4: Ollama (cx=520, cy=55) ═══ -->
+  <!-- Design: Standing pixel-art Llama mascot on the ground -->
+  <g class="ol-llama">
+    <rect x="510" y="52" width="20" height="14" rx="2" fill="#e0e0e0" />
+    <rect x="522" y="38" width="8" height="16" fill="#e0e0e0" />
+    <rect x="522" y="34" width="12" height="6" fill="#e0e0e0" />
+    <rect x="530" y="37" width="6" height="3" fill="#c0c0c0" />
+    <rect x="523" y="28" width="2" height="8" fill="#e0e0e0" />
+    <rect x="527" y="28" width="2" height="8" fill="#e0e0e0" />
+    <rect x="512" y="66" width="3" height="10" fill="#c0c0c0" />
+    <rect x="517" y="66" width="3" height="10" fill="#c0c0c0" />
+    <rect x="523" y="66" width="3" height="10" fill="#c0c0c0" />
+    <rect x="527" y="66" width="3" height="10" fill="#c0c0c0" />
+    <rect x="507" y="52" width="3" height="5" fill="#c0c0c0" />
+    <rect x="525" y="36" width="2" height="2" fill="#0d1117" />
   </g>
-  <text class="lbl" x="675" y="92" text-anchor="middle" fill="#8b5cf6">OpenRouter</text>
+  <text class="lbl" x="520" y="92" text-anchor="middle" fill="#e0e0e0">Ollama</text>
 
-  <!-- ═══ BOT 6: Codex (cx=825, cyan #00f0ff) ═══ -->
-  <!-- Design: code-bracket hat { }; inverted eye colors (dark on cyan) -->
-  <g class="b6">
-    <rect x="817" y="28" width="4" height="8" fill="#00f0ff"/>
-    <rect x="815" y="28" width="4" height="4" fill="#00f0ff"/>
-    <rect x="829" y="28" width="4" height="8" fill="#00f0ff"/>
-    <rect x="833" y="28" width="4" height="4" fill="#00f0ff"/>
-    <rect x="811" y="36" width="28" height="16" rx="2" fill="#00f0ff"/>
-    <rect x="816" y="41" width="6" height="5" rx="1" fill="#0d1117"/>
-    <rect x="828" y="41" width="6" height="5" rx="1" fill="#0d1117"/>
-    <rect x="818" y="42" width="3" height="3" fill="#00f0ff"/>
-    <rect x="830" y="42" width="3" height="3" fill="#00f0ff"/>
-    <rect x="815" y="52" width="20" height="10" fill="#00b8c9"/>
-    <rect x="817" y="62" width="6" height="10" fill="#00f0ff"/>
-    <rect x="827" y="62" width="6" height="10" fill="#00f0ff"/>
-    <rect x="815" y="70" width="8" height="4" rx="1" fill="#00b8c9"/>
-    <rect x="827" y="70" width="8" height="4" rx="1" fill="#00b8c9"/>
+  <!-- ═══ 5: OpenRouter (cx=660, cy=46) ═══ -->
+  <!-- Design: Routing hub emitting data packets left and right -->
+  <g>
+    <g class="or-hub">
+      <rect x="650" y="38" width="20" height="16" rx="3" fill="#8b5cf6" />
+      <rect x="653" y="41" width="14" height="10" rx="1" fill="#4c1d95" />
+      <rect x="655" y="45" width="2" height="2" fill="#00f0ff" />
+      <rect x="659" y="45" width="2" height="2" fill="#bf5fff" />
+      <rect x="663" y="45" width="2" height="2" fill="#10a37f" />
+    </g>
+    <circle class="or-packet1" cx="645" cy="46" r="3" fill="#bf5fff" />
+    <circle class="or-packet2" cx="675" cy="46" r="3" fill="#00f0ff" />
   </g>
-  <text class="lbl" x="825" y="92" text-anchor="middle" fill="#00f0ff">Codex</text>
+  <text class="lbl" x="660" y="92" text-anchor="middle" fill="#8b5cf6">OpenRouter</text>
+
+  <!-- ═══ 6: Codex (cx=800, cy=46) ═══ -->
+  <!-- Design: Pilot robot hovering with dynamic jetpack flame -->
+  <g class="cx-pilot">
+    <rect x="786" y="42" width="6" height="12" rx="1" fill="#505050" />
+    <g class="cx-flame">
+      <polygon points="787,54 789,64 791,54" fill="#ff6b9d" />
+      <polygon points="788,54 789,60 790,54" fill="#00f0ff" />
+    </g>
+    <rect x="792" y="36" width="16" height="16" rx="3" fill="#00f0ff" />
+    <rect x="795" y="39" width="10" height="8" rx="1" fill="#0d1117" />
+    <rect x="797" y="42" width="2" height="2" fill="#00f0ff" />
+    <rect x="801" y="42" width="2" height="2" fill="#00f0ff" />
+    <rect x="799" y="30" width="2" height="6" fill="#00f0ff" />
+    <rect x="799" y="28" width="2" height="2" fill="#ff6b9d" />
+  </g>
+  <text class="lbl" x="800" y="92" text-anchor="middle" fill="#00f0ff">Codex</text>
 </svg>

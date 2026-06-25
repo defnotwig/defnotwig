@@ -10,12 +10,11 @@
   <img src="./assets/pixel-ai-banner.svg" width="100%" alt="Gabriel Ludwig Rivera — Full-Stack AI Systems Engineer" />
 </div>
 
-<!-- ░░░░░░░░░░░░░░░░░░░  TYPING SVG  ░░░░░░░░░░░░░░░░░░░ -->
+<!-- ░░░░░░░░░░░░░░░░░░░  ROLES HEADER  ░░░░░░░░░░░░░░░░░░░ -->
 
 <div align="center">
-  <a href="https://github.com/defnotwig">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=00F0FF&center=true&vCenter=true&repeat=true&width=700&height=80&lines=FULL-STACK+AI+SYSTEMS+ENGINEER;AGENTIC+OPS+%E2%80%A2+GOVERNANCE+%E2%80%A2+AUTOMATION;REACT+%E2%80%A2+FASTAPI+%E2%80%A2+POSTGRES+%E2%80%A2+AWS;OPENAI+%E2%80%A2+CLAUDE+%E2%80%A2+GEMINI+%E2%80%A2+OLLAMA" alt="Typing SVG" />
-  </a>
+  <h2><code>[ FULL-STACK AI SYSTEMS ENGINEER ]</code></h2>
+  <p><strong>Agentic Ops &bull; Governance &bull; Automation</strong></p>
 </div>
 
 <!-- ░░░░░░░░░░░░░░░░░░░  CONTACT BADGES  ░░░░░░░░░░░░░░░░░░░ -->
@@ -28,10 +27,10 @@
 
 ---
 
-<!-- ░░░░░░░░░░░░░░░░░░░  AI MODEL PARADE  ░░░░░░░░░░░░░░░░░░░ -->
+<!-- ░░░░░░░░░░░░░░░░░░░  AI MODEL PLAYGROUND  ░░░░░░░░░░░░░░░░░░░ -->
 
 <div align="center">
-  <img src="./assets/ai-model-parade.svg" width="100%" alt="AI Model Parade — OpenAI · Claude · Gemini · Ollama · OpenRouter · Codex" />
+  <img src="./assets/ai-model-parade.svg" width="100%" alt="AI Model Playground — OpenAI · Claude · Gemini · Ollama · OpenRouter · Codex" />
 </div>
 
 ---
@@ -112,33 +111,6 @@ React + FastAPI + PostgreSQL + AWS EC2. From frontend to database to CI/CD pipel
 
 ---
 
-<!-- ░░░░░░░░░░░░░░░░░░░  ARCHITECTURE  ░░░░░░░░░░░░░░░░░░░ -->
-
-## 🏗️ System Architecture
-
-```mermaid
-graph TD
-    A["👤 User / Operator"] --> B["🖥️ Lark + Web UI"]
-    B --> C["⚙️ Backend API"]
-    C --> D{"🔀 Provider Router"}
-    D --> E["OpenAI"]
-    D --> F["Claude"]
-    D --> G["Gemini"]
-    D --> H["Ollama"]
-    E --> I["🗄️ Database"]
-    F --> I
-    G --> I
-    H --> I
-    I --> J["🛡️ Audit + Guardrails"]
-    J --> K["✅ Safe Output"]
-    style E fill:#10a37f,color:#fff
-    style F fill:#d97757,color:#fff
-    style G fill:#4285f4,color:#fff
-    style H fill:#c0c0c0,color:#333
-```
-
----
-
 <!-- ░░░░░░░░░░░░░░░░░░░  PROJECTS  ░░░░░░░░░░░░░░░░░░░ -->
 
 ## ✦ Project Constellation
@@ -195,16 +167,13 @@ graph TD
 
 <!-- ░░░░░░░░░░░░░░░░░░░  HOW I BUILD  ░░░░░░░░░░░░░░░░░░░ -->
 
-## ⚙️ How I Usually Build
+## ⚙️ How I Build
 
-```
-1. Define the problem — not the solution
-2. Data model + API first — schema before UI
-3. Governance from day one — audit trails, access control, PII redaction
-4. Backend → Frontend → Deploy — wire the pipes, then paint the house
-5. CI/CD + security scanning — SonarQube, Gitleaks, Trivy on every push
-6. Monitor, self-heal, iterate — uptime is a feature
-```
+- **Understand** &mdash; Define the boundary of the problem.
+- **Model** &mdash; Design schemas and APIs first.
+- **Govern** &mdash; Embed security, logs, and guardrails.
+- **Deploy** &mdash; Deliver safely via automated pipelines.
+- **Monitor** &mdash; Track logs, auto-recover, and iterate.
 
 ---
 
@@ -243,21 +212,6 @@ graph TD
     <img alt="Snake animation" src="https://raw.githubusercontent.com/defnotwig/defnotwig/output/github-contribution-grid-snake-dark.svg" width="100%" />
   </picture>
 </div>
-
----
-
-<!-- ░░░░░░░░░░░░░░░░░░░  NOW LOADING  ░░░░░░░░░░░░░░░░░░░ -->
-
-## 🔋 Now Loading
-
-```
-Agentic AI Systems       ████████████████████░  95%
-LLM Orchestration        ███████████████████░░  90%
-Full-Stack Engineering   ██████████████████░░░  85%
-Backend Architecture     ██████████████████░░░  85%
-Frontend Engineering     █████████████████░░░░  80%
-DevOps & CI/CD           ████████████████░░░░░  75%
-```
 
 ---
 
