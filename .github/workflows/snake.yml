@@ -1,0 +1,50 @@
+# ═══════════════════════════════════════════════════════════════
+# Contribution Snake Generator
+# Generates animated SVG of a snake eating your GitHub contributions
+# Output: pushed to the 'output' branch as static SVG files
+# ═══════════════════════════════════════════════════════════════
+
+name: Generate Snake
+
+# ── Triggers ──
+# 'schedule' runs the workflow on a cron schedule (daily at midnight UTC)
+# 'workflow_dispatch' allows you to manually trigger it from the Actions tab
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+# ── Permissions ──
+# The workflow needs write access to push generated files to the output branch
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      # ── Step 1: Generate Snake SVGs ──
+      # Platane/snk reads your contribution graph and creates animated SVGs
+      # The '?palette=github-dark' query param creates a dark-mode variant
+      - name: Generate snake SVG
+        uses: Platane/snk@v3
+        with:
+          github_user_name: defnotwig
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # ── Step 2: Push to output branch ──
+      # Pushes the 'dist/' directory contents to a branch named 'output'
+      # The output branch is created automatically if it doesn't exist
+      - name: Deploy to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

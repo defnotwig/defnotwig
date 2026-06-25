@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300">
+  <defs>
+    <!-- Grid pattern: creates a subtle 40×40px repeating grid overlay -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00f0ff" stroke-width="0.5" opacity="0.05"/>
+    </pattern>
+    <!-- Cyan glow filter: blurs the source graphic, floods with cyan, composites, then merges -->
+    <filter id="glow-c">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#00f0ff" flood-opacity="0.5" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Violet glow filter: same technique, softer spread -->
+    <filter id="glow-v">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#bf5fff" flood-opacity="0.4" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Border gradient: cyan → violet → cyan diagonal sweep -->
+    <linearGradient id="border-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#bf5fff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    /* Scanline sweeps from above the SVG to below it, creating a CRT monitor effect */
+    @keyframes scan { 0% { transform: translateY(-10px); } 100% { transform: translateY(310px); } }
+    /* Step-end timing creates an abrupt on/off blink, like a real terminal cursor */
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    /* Particle pulse group 1: fades from dim to bright */
+    @keyframes pulse1 { 0%, 100% { opacity: 0.15; } 50% { opacity: 0.7; } }
+    /* Particle pulse group 2: inverse phase — bright to dim */
+    @keyframes pulse2 { 0%, 100% { opacity: 0.6; } 50% { opacity: 0.1; } }
+    /* Gentle vertical float for the tech stack text */
+    @keyframes float1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+    .scanline { animation: scan 6s linear infinite; }
+    .cursor { animation: blink 1.2s step-end infinite; }
+    .p1 { animation: pulse1 3s ease-in-out infinite; }
+    .p2 { animation: pulse2 4s ease-in-out infinite; }
+    .float { animation: float1 3s ease-in-out infinite; }
+    .mono { font-family: 'Courier New', Courier, monospace; }
+  </style>
+
+  <!-- ===== BACKGROUND LAYERS ===== -->
+  <rect width="900" height="300" fill="#0d1117" rx="12"/>
+  <rect width="900" height="300" fill="url(#grid)" rx="12"/>
+  <rect x="2" y="2" width="896" height="296" rx="10" fill="none" stroke="url(#border-grad)" stroke-width="1"/>
+
+  <!-- ===== ANIMATED SCANLINE ===== -->
+  <rect class="scanline" x="0" y="0" width="900" height="2" fill="#00f0ff" opacity="0.06"/>
+
+  <!-- ===== PIXEL CORNER DECORATIONS ===== -->
+  <!-- Top-left: cyan L-bracket -->
+  <g opacity="0.4" fill="#00f0ff">
+    <rect x="20" y="20" width="8" height="8"/><rect x="28" y="20" width="8" height="8"/>
+    <rect x="36" y="20" width="8" height="8"/><rect x="44" y="20" width="8" height="8"/>
+    <rect x="20" y="28" width="8" height="8"/><rect x="20" y="36" width="8" height="8"/>
+  </g>
+  <!-- Top-right: violet L-bracket -->
+  <g opacity="0.4" fill="#bf5fff">
+    <rect x="848" y="20" width="8" height="8"/><rect x="856" y="20" width="8" height="8"/>
+    <rect x="864" y="20" width="8" height="8"/><rect x="872" y="20" width="8" height="8"/>
+    <rect x="872" y="28" width="8" height="8"/><rect x="872" y="36" width="8" height="8"/>
+  </g>
+  <!-- Bottom-left: violet L-bracket -->
+  <g opacity="0.4" fill="#bf5fff">
+    <rect x="20" y="256" width="8" height="8"/><rect x="20" y="264" width="8" height="8"/>
+    <rect x="20" y="272" width="8" height="8"/><rect x="28" y="272" width="8" height="8"/>
+    <rect x="36" y="272" width="8" height="8"/><rect x="44" y="272" width="8" height="8"/>
+  </g>
+  <!-- Bottom-right: cyan L-bracket -->
+  <g opacity="0.4" fill="#00f0ff">
+    <rect x="872" y="256" width="8" height="8"/><rect x="872" y="264" width="8" height="8"/>
+    <rect x="848" y="272" width="8" height="8"/><rect x="856" y="272" width="8" height="8"/>
+    <rect x="864" y="272" width="8" height="8"/><rect x="872" y="272" width="8" height="8"/>
+  </g>
+
+  <!-- ===== SPARKLE CROSSES ===== -->
+  <g class="p1" fill="#00f0ff" opacity="0.5">
+    <rect x="122" y="66" width="4" height="4"/>
+    <rect x="118" y="70" width="4" height="4"/><rect x="122" y="70" width="4" height="4"/><rect x="126" y="70" width="4" height="4"/>
+    <rect x="122" y="74" width="4" height="4"/>
+  </g>
+  <g class="p2" fill="#bf5fff" opacity="0.5">
+    <rect x="782" y="76" width="4" height="4"/>
+    <rect x="778" y="80" width="4" height="4"/><rect x="782" y="80" width="4" height="4"/><rect x="786" y="80" width="4" height="4"/>
+    <rect x="782" y="84" width="4" height="4"/>
+  </g>
+  <g class="p1" fill="#ff6b9d" opacity="0.4">
+    <rect x="102" y="216" width="4" height="4"/>
+    <rect x="98" y="220" width="4" height="4"/><rect x="102" y="220" width="4" height="4"/><rect x="106" y="220" width="4" height="4"/>
+    <rect x="102" y="224" width="4" height="4"/>
+  </g>
+  <g class="p2" fill="#58a6ff" opacity="0.4">
+    <rect x="802" y="206" width="4" height="4"/>
+    <rect x="798" y="210" width="4" height="4"/><rect x="802" y="210" width="4" height="4"/><rect x="806" y="210" width="4" height="4"/>
+    <rect x="802" y="214" width="4" height="4"/>
+  </g>
+
+  <!-- ===== FLOATING PARTICLES ===== -->
+  <rect class="p1" x="200" y="55" width="3" height="3" fill="#00f0ff" opacity="0.3"/>
+  <rect class="p2" x="700" y="60" width="3" height="3" fill="#bf5fff" opacity="0.3"/>
+  <rect class="p1" x="350" y="235" width="3" height="3" fill="#58a6ff" opacity="0.3"/>
+  <rect class="p2" x="550" y="48" width="3" height="3" fill="#ff6b9d" opacity="0.3"/>
+  <rect class="p1" x="650" y="230" width="3" height="3" fill="#00f0ff" opacity="0.3"/>
+  <rect class="p2" x="450" y="52" width="3" height="3" fill="#bf5fff" opacity="0.2"/>
+
+  <!-- ===== MAIN TITLE ===== -->
+  <text class="mono" x="450" y="115" text-anchor="middle" font-size="38" font-weight="bold" fill="#00f0ff" filter="url(#glow-c)">GABRIEL LUDWIG RIVERA</text>
+
+  <!-- ===== BLINKING CURSOR ===== -->
+  <rect class="cursor" x="706" y="90" width="12" height="26" fill="#00f0ff" rx="1"/>
+
+  <!-- ===== SUBTITLE ===== -->
+  <text class="mono" x="450" y="155" text-anchor="middle" font-size="16" fill="#bf5fff" filter="url(#glow-v)">Full-Stack AI Systems  &#x2022;  Agentic Ops  &#x2022;  Governance</text>
+
+  <!-- ===== TECH STACK LINE ===== -->
+  <text class="mono float" x="450" y="195" text-anchor="middle" font-size="12" fill="#58a6ff" letter-spacing="0.5">React &#xB7; FastAPI &#xB7; PostgreSQL &#xB7; AWS EC2 &#xB7; OpenAI &#xB7; Claude &#xB7; Gemini &#xB7; Ollama</text>
+
+  <!-- ===== DIVIDER LINE ===== -->
+  <line x1="100" y1="240" x2="800" y2="240" stroke="#1f2937" stroke-width="1"/>
+
+  <!-- ===== STATUS BAR ===== -->
+  <text class="mono" x="450" y="268" text-anchor="middle" font-size="10" letter-spacing="1.5" fill="#484f58">SYS.STATUS: <tspan fill="#10a37f">ONLINE</tspan>  &#x2022;  BUILD: <tspan fill="#10a37f">STABLE</tspan>  &#x2022;  GUARDRAILS: <tspan fill="#10a37f">ACTIVE</tspan></text>
+</svg>

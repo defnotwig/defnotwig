@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 110" width="900" height="110">
+  <style>
+    /* Bounce animation: vertical oscillation simulating walking/marching */
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    /* Data-dot pulse: fading dots between bots suggest data flowing between models */
+    @keyframes pulse {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 0.8; }
+    }
+    /* Each bot class has increasing delay (0.13s apart) for a cascading wave effect */
+    .b1 { animation: bounce 0.8s ease-in-out infinite; }
+    .b2 { animation: bounce 0.8s ease-in-out 0.13s infinite; }
+    .b3 { animation: bounce 0.8s ease-in-out 0.26s infinite; }
+    .b4 { animation: bounce 0.8s ease-in-out 0.39s infinite; }
+    .b5 { animation: bounce 0.8s ease-in-out 0.52s infinite; }
+    .b6 { animation: bounce 0.8s ease-in-out 0.65s infinite; }
+    .dot { animation: pulse 2s ease-in-out infinite; }
+    .lbl { font-family: 'Courier New', Courier, monospace; font-size: 10px; font-weight: bold; }
+  </style>
+
+  <!-- Background -->
+  <rect width="900" height="110" fill="#0d1117" rx="8"/>
+
+  <!-- Section title -->
+  <text x="450" y="14" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#484f58" letter-spacing="3">AI MODEL PARADE</text>
+
+  <!-- Ground line: dashed line the bots "walk" on -->
+  <line x1="30" y1="76" x2="870" y2="76" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- Data flow dots: pulsing circles between bots suggest inter-model communication -->
+  <circle class="dot" cx="150" cy="74" r="2" fill="#00f0ff"/>
+  <circle class="dot" cx="300" cy="74" r="2" fill="#bf5fff" style="animation-delay: 0.5s"/>
+  <circle class="dot" cx="450" cy="74" r="2" fill="#58a6ff" style="animation-delay: 1s"/>
+  <circle class="dot" cx="600" cy="74" r="2" fill="#00f0ff" style="animation-delay: 1.5s"/>
+  <circle class="dot" cx="750" cy="74" r="2" fill="#bf5fff" style="animation-delay: 2s"/>
+
+  <!-- ═══ BOT 1: OpenAI (cx=75, green #10a37f) ═══ -->
+  <!-- Design: single antenna with ball tip, rectangular head, chest plate detail -->
+  <g class="b1">
+    <rect x="73" y="28" width="4" height="8" fill="#10a37f"/>
+    <rect x="71" y="26" width="8" height="4" rx="2" fill="#15c498"/>
+    <rect x="61" y="36" width="28" height="16" rx="2" fill="#10a37f"/>
+    <rect x="66" y="41" width="6" height="5" rx="1" fill="#b0ffe0"/>
+    <rect x="78" y="41" width="6" height="5" rx="1" fill="#b0ffe0"/>
+    <rect x="69" y="43" width="3" height="3" fill="#0d1117"/>
+    <rect x="80" y="43" width="3" height="3" fill="#0d1117"/>
+    <rect x="65" y="52" width="20" height="10" fill="#0d8c6b"/>
+    <rect x="71" y="55" width="8" height="4" rx="1" fill="#10a37f"/>
+    <rect x="67" y="62" width="6" height="10" fill="#10a37f"/>
+    <rect x="77" y="62" width="6" height="10" fill="#10a37f"/>
+    <rect x="65" y="70" width="8" height="4" rx="1" fill="#0d8c6b"/>
+    <rect x="77" y="70" width="8" height="4" rx="1" fill="#0d8c6b"/>
+  </g>
+  <text class="lbl" x="75" y="92" text-anchor="middle" fill="#10a37f">OpenAI</text>
+
+  <!-- ═══ BOT 2: Claude (cx=225, coral #d97757) ═══ -->
+  <!-- Design: rounded ears, warm color, friendly silhouette -->
+  <g class="b2">
+    <rect x="215" y="30" width="6" height="6" rx="3" fill="#d97757"/>
+    <rect x="229" y="30" width="6" height="6" rx="3" fill="#d97757"/>
+    <rect x="211" y="36" width="28" height="16" rx="3" fill="#d97757"/>
+    <rect x="216" y="41" width="6" height="5" rx="1" fill="#ffd4c4"/>
+    <rect x="228" y="41" width="6" height="5" rx="1" fill="#ffd4c4"/>
+    <rect x="219" y="43" width="3" height="3" fill="#0d1117"/>
+    <rect x="230" y="43" width="3" height="3" fill="#0d1117"/>
+    <rect x="215" y="52" width="20" height="10" fill="#b85f3e"/>
+    <rect x="217" y="62" width="6" height="10" fill="#d97757"/>
+    <rect x="227" y="62" width="6" height="10" fill="#d97757"/>
+    <rect x="215" y="70" width="8" height="4" rx="1" fill="#b85f3e"/>
+    <rect x="227" y="70" width="8" height="4" rx="1" fill="#b85f3e"/>
+  </g>
+  <text class="lbl" x="225" y="92" text-anchor="middle" fill="#d97757">Claude</text>
+
+  <!-- ═══ BOT 3: Gemini (cx=375, blue #4285f4) ═══ -->
+  <!-- Design: twin antennae with ball tips — "Gemini" = twins -->
+  <g class="b3">
+    <rect x="368" y="26" width="4" height="10" fill="#4285f4"/>
+    <rect x="378" y="26" width="4" height="10" fill="#4285f4"/>
+    <rect x="366" y="24" width="8" height="4" rx="2" fill="#669df7"/>
+    <rect x="376" y="24" width="8" height="4" rx="2" fill="#669df7"/>
+    <rect x="361" y="36" width="28" height="16" rx="2" fill="#4285f4"/>
+    <rect x="366" y="41" width="6" height="5" rx="1" fill="#b4d0ff"/>
+    <rect x="378" y="41" width="6" height="5" rx="1" fill="#b4d0ff"/>
+    <rect x="369" y="43" width="3" height="3" fill="#0d1117"/>
+    <rect x="380" y="43" width="3" height="3" fill="#0d1117"/>
+    <rect x="365" y="52" width="20" height="10" fill="#2d6cd4"/>
+    <rect x="367" y="62" width="6" height="10" fill="#4285f4"/>
+    <rect x="377" y="62" width="6" height="10" fill="#4285f4"/>
+    <rect x="365" y="70" width="8" height="4" rx="1" fill="#2d6cd4"/>
+    <rect x="377" y="70" width="8" height="4" rx="1" fill="#2d6cd4"/>
+  </g>
+  <text class="lbl" x="375" y="92" text-anchor="middle" fill="#4285f4">Gemini</text>
+
+  <!-- ═══ BOT 4: Ollama (cx=525, white/gray #e0e0e0) ═══ -->
+  <!-- Design: tall pointed ears — llama reference; inverted eye colors (dark on light) -->
+  <g class="b4">
+    <rect x="515" y="24" width="5" height="12" fill="#e0e0e0"/>
+    <rect x="530" y="24" width="5" height="12" fill="#e0e0e0"/>
+    <rect x="511" y="36" width="28" height="16" rx="2" fill="#e0e0e0"/>
+    <rect x="516" y="41" width="6" height="5" rx="1" fill="#505050"/>
+    <rect x="528" y="41" width="6" height="5" rx="1" fill="#505050"/>
+    <rect x="518" y="42" width="3" height="3" fill="#ffffff"/>
+    <rect x="530" y="42" width="3" height="3" fill="#ffffff"/>
+    <rect x="515" y="52" width="20" height="10" fill="#b0b0b0"/>
+    <rect x="517" y="62" width="6" height="10" fill="#e0e0e0"/>
+    <rect x="527" y="62" width="6" height="10" fill="#e0e0e0"/>
+    <rect x="515" y="70" width="8" height="4" rx="1" fill="#b0b0b0"/>
+    <rect x="527" y="70" width="8" height="4" rx="1" fill="#b0b0b0"/>
+  </g>
+  <text class="lbl" x="525" y="92" text-anchor="middle" fill="#e0e0e0">Ollama</text>
+
+  <!-- ═══ BOT 5: OpenRouter (cx=675, purple #8b5cf6) ═══ -->
+  <!-- Design: arrow/router-shaped hat with cross-bar — routing metaphor -->
+  <g class="b5">
+    <rect x="673" y="26" width="4" height="10" fill="#8b5cf6"/>
+    <rect x="669" y="28" width="12" height="4" fill="#8b5cf6"/>
+    <rect x="671" y="24" width="8" height="4" rx="1" fill="#a78bfa"/>
+    <rect x="661" y="36" width="28" height="16" rx="2" fill="#8b5cf6"/>
+    <rect x="666" y="41" width="6" height="5" rx="1" fill="#d4bcff"/>
+    <rect x="678" y="41" width="6" height="5" rx="1" fill="#d4bcff"/>
+    <rect x="669" y="43" width="3" height="3" fill="#0d1117"/>
+    <rect x="680" y="43" width="3" height="3" fill="#0d1117"/>
+    <rect x="665" y="52" width="20" height="10" fill="#6d3fd4"/>
+    <rect x="667" y="62" width="6" height="10" fill="#8b5cf6"/>
+    <rect x="677" y="62" width="6" height="10" fill="#8b5cf6"/>
+    <rect x="665" y="70" width="8" height="4" rx="1" fill="#6d3fd4"/>
+    <rect x="677" y="70" width="8" height="4" rx="1" fill="#6d3fd4"/>
+  </g>
+  <text class="lbl" x="675" y="92" text-anchor="middle" fill="#8b5cf6">OpenRouter</text>
+
+  <!-- ═══ BOT 6: Codex (cx=825, cyan #00f0ff) ═══ -->
+  <!-- Design: code-bracket hat { }; inverted eye colors (dark on cyan) -->
+  <g class="b6">
+    <rect x="817" y="28" width="4" height="8" fill="#00f0ff"/>
+    <rect x="815" y="28" width="4" height="4" fill="#00f0ff"/>
+    <rect x="829" y="28" width="4" height="8" fill="#00f0ff"/>
+    <rect x="833" y="28" width="4" height="4" fill="#00f0ff"/>
+    <rect x="811" y="36" width="28" height="16" rx="2" fill="#00f0ff"/>
+    <rect x="816" y="41" width="6" height="5" rx="1" fill="#0d1117"/>
+    <rect x="828" y="41" width="6" height="5" rx="1" fill="#0d1117"/>
+    <rect x="818" y="42" width="3" height="3" fill="#00f0ff"/>
+    <rect x="830" y="42" width="3" height="3" fill="#00f0ff"/>
+    <rect x="815" y="52" width="20" height="10" fill="#00b8c9"/>
+    <rect x="817" y="62" width="6" height="10" fill="#00f0ff"/>
+    <rect x="827" y="62" width="6" height="10" fill="#00f0ff"/>
+    <rect x="815" y="70" width="8" height="4" rx="1" fill="#00b8c9"/>
+    <rect x="827" y="70" width="8" height="4" rx="1" fill="#00b8c9"/>
+  </g>
+  <text class="lbl" x="825" y="92" text-anchor="middle" fill="#00f0ff">Codex</text>
+</svg>
