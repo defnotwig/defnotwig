@@ -14,7 +14,7 @@
 
 <p align="center">
   <a href="https://github.com/defnotwig">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=false&width=650&height=50&lines=Full-Stack+AI+Systems+Engineer;Agentic+Ops+Architect;LLM+Orchestration+%26+Governance;Building+Scalable+Intelligence;From+Infra+to+Inference" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=false&width=650&height=50&lines=Full+Stack+Developer;AI+Developer;LLM+Orchestration+%26+Governance;Building+Ideas+into+Scalable+Systems" alt="Typing SVG" />
   </a>
 </p>
 
@@ -134,11 +134,11 @@ I build production-grade AI systems — from agentic operations assistants with 
 
 <p align="center">
   <a href="https://github.com/defnotwig">
-    <img height="180" src="https://github-readme-stats.vercel.app/api?username=defnotwig&show_icons=true&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=1F6FEB&text_color=C9D1D9&ring_color=58A6FF" alt="GitHub Stats" />
+    <img height="180" src="https://github-stats-extended.vercel.app/api?username=defnotwig&show_icons=true&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=1F6FEB&text_color=C9D1D9&ring_color=58A6FF&cache_seconds=86400&count_private=true&include_all_commits=true" alt="GitHub Stats" />
   </a>
   &nbsp;&nbsp;
   <a href="https://github.com/defnotwig">
-    <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=defnotwig&layout=compact&hide_border=true&bg_color=0D1117&title_color=58A6FF&text_color=C9D1D9" alt="Top Languages" />
+    <img height="180" src="https://github-stats-extended.vercel.app/api/top-langs/?username=defnotwig&layout=compact&hide_border=true&bg_color=0D1117&title_color=58A6FF&text_color=C9D1D9&cache_seconds=86400" alt="Top Languages" />
   </a>
 </p>
 
@@ -154,40 +154,12 @@ I build production-grade AI systems — from agentic operations assistants with 
 <tr>
 <td valign="top" width="50%">
 
-### [OpenClaw Volare](https://github.com/defnotwig/openclaw-volare)
-Agentic ops assistant monitoring 24/7 dialer operations with self-healing watchdog and multi-provider LLM fallback reasoning.
-
-<p>
-  <img src="https://img.shields.io/github/stars/defnotwig/openclaw-volare?style=flat-square&color=58A6FF" alt="Stars" />
-  <img src="https://img.shields.io/github/forks/defnotwig/openclaw-volare?style=flat-square&color=8B949E" alt="Forks" />
-</p>
-
-`Ollama` `Gemini` `SQLite` `Lark`
-
-</td>
-<td valign="top" width="50%">
-
-### [DLx](https://github.com/defnotwig/dlx)
-Document automation platform handling Excel-to-Word generation with attorney approval workflows and full audit trails.
-
-<p>
-  <img src="https://img.shields.io/github/stars/defnotwig/dlx?style=flat-square&color=58A6FF" alt="Stars" />
-  <img src="https://img.shields.io/github/forks/defnotwig/dlx?style=flat-square&color=8B949E" alt="Forks" />
-</p>
-
-`FastAPI` `PostgreSQL` `React` `AWS EC2`
-
-</td>
-</tr>
-<tr>
-<td valign="top" width="50%">
-
-### [K-WISE](https://github.com/defnotwig/k-wise)
+### [KWise-Final](https://github.com/defnotwig/KWise-Final)
 AI-powered PC builder validating 3,200+ hardware compatibility rules in real-time with ML-driven recommendations.
 
 <p>
-  <img src="https://img.shields.io/github/stars/defnotwig/k-wise?style=flat-square&color=58A6FF" alt="Stars" />
-  <img src="https://img.shields.io/github/forks/defnotwig/k-wise?style=flat-square&color=8B949E" alt="Forks" />
+  <img src="https://img.shields.io/github/stars/defnotwig/KWise-Final?style=flat-square&color=58A6FF" alt="Stars" />
+  <img src="https://img.shields.io/github/forks/defnotwig/KWise-Final?style=flat-square&color=8B949E" alt="Forks" />
 </p>
 
 `React` `Node.js` `PostgreSQL` `Ollama`
@@ -195,12 +167,12 @@ AI-powered PC builder validating 3,200+ hardware compatibility rules in real-tim
 </td>
 <td valign="top" width="50%">
 
-### [FX Transparency Widget](https://github.com/defnotwig/fx-transparency-widget)
-Embeddable stablecoin-to-fiat FX widget with fallback rate providers and AI-powered quote explanations.
+### [AI-Powered-Treatment-Plan-Assistant](https://github.com/defnotwig/AI-Powered-Treatment-Plan-Assistant)
+Clinical decision support system with AI-powered treatment plan generation, drug interaction detection, and risk scoring.
 
 <p>
-  <img src="https://img.shields.io/github/stars/defnotwig/fx-transparency-widget?style=flat-square&color=58A6FF" alt="Stars" />
-  <img src="https://img.shields.io/github/forks/defnotwig/fx-transparency-widget?style=flat-square&color=8B949E" alt="Forks" />
+  <img src="https://img.shields.io/github/stars/defnotwig/AI-Powered-Treatment-Plan-Assistant?style=flat-square&color=58A6FF" alt="Stars" />
+  <img src="https://img.shields.io/github/forks/defnotwig/AI-Powered-Treatment-Plan-Assistant?style=flat-square&color=8B949E" alt="Forks" />
 </p>
 
 `TypeScript` `React` `Zod` `Node.js`
@@ -210,7 +182,48 @@ Embeddable stablecoin-to-fiat FX widget with fallback rate providers and AI-powe
 <tr>
 <td valign="top" width="50%">
 
-### [SlopShield AI](https://github.com/defnotwig/slopshield-ai)
+### [pg-safe-migrate](https://github.com/defnotwig/pg-safe-migrate)
+Safety-first PostgreSQL migration engine for Node.js with advisory locks, drift detection, checksum verification, and lint rules.
+
+<p>
+  <img src="https://img.shields.io/github/stars/defnotwig/pg-safe-migrate?style=flat-square&color=58A6FF" alt="Stars" />
+  <img src="https://img.shields.io/github/forks/defnotwig/pg-safe-migrate?style=flat-square&color=8B949E" alt="Forks" />
+</p>
+
+`TypeScript` `React` `PostgreSQL` `Node.js`
+
+</td>
+<td valign="top" width="50%">
+
+### [Real-time_FX_Fee_Transparency_Widget](https://github.com/defnotwig/Real-time_FX_Fee_Transparency_Widget)
+Embeddable stablecoin-to-fiat FX widget with fallback rate providers and AI-powered quote explanations.
+
+<p>
+  <img src="https://img.shields.io/github/stars/defnotwig/Real-time_FX_Fee_Transparency_Widget?style=flat-square&color=58A6FF" alt="Stars" />
+  <img src="https://img.shields.io/github/forks/defnotwig/Real-time_FX_Fee_Transparency_Widget?style=flat-square&color=8B949E" alt="Forks" />
+</p>
+
+`TypeScript` `React` `Zod` `Node.js`
+
+</td>
+</tr>
+<tr>
+<td valign="top" width="50%">
+
+### [codex-profile-switcher](https://github.com/defnotwig/codex-profile-switcher)
+Profile switcher tool for managing multiple Copilot/Codex configurations across different environments and workspaces.
+
+<p>
+  <img src="https://img.shields.io/github/stars/defnotwig/codex-profile-switcher?style=flat-square&color=58A6FF" alt="Stars" />
+  <img src="https://img.shields.io/github/forks/defnotwig/codex-profile-switcher?style=flat-square&color=8B949E" alt="Forks" />
+</p>
+
+`Python` `Copilot` `CLI`
+
+</td>
+<td valign="top" width="50%">
+
+### [slopshield-ai](https://github.com/defnotwig/slopshield-ai)
 Static analysis platform detecting unsafe AI-generated code before production via deterministic + AI-assisted review.
 
 <p>
@@ -219,19 +232,6 @@ Static analysis platform detecting unsafe AI-generated code before production vi
 </p>
 
 `Python` `LLM APIs` `Lark`
-
-</td>
-<td valign="top" width="50%">
-
-### [AJAIA Docs](https://github.com/defnotwig/ajaia-docs)
-Real-time collaborative document editor with rich-text editing, version history, and AI writing assist.
-
-<p>
-  <img src="https://img.shields.io/github/stars/defnotwig/ajaia-docs?style=flat-square&color=58A6FF" alt="Stars" />
-  <img src="https://img.shields.io/github/forks/defnotwig/ajaia-docs?style=flat-square&color=8B949E" alt="Forks" />
-</p>
-
-`Next.js` `TipTap` `SQLite` `Vercel`
 
 </td>
 </tr>
